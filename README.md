@@ -1,5 +1,11 @@
 # Сервер Minecraft с авторизацией через Ely.by
 
+![Static Badge](https://img.shields.io/badge/kaurcev.dev-kaurcev-kaurcev)
+![GitHub top language](https://img.shields.io/github/languages/top/kaurcev/minecraft-ely-server)
+![GitHub](https://img.shields.io/github/license/kaurcev/minecraft-ely-server)
+![GitHub Repo stars](https://img.shields.io/github/stars/kaurcev/minecraft-ely-server)
+![GitHub issues](https://img.shields.io/github/issues/kaurcev/minecraft-ely-server)
+
 Это готовое решение для запуска сервера Minecraft Forge 1.12.2 с поддержкой авторизации через Ely.by, специально разработанное для регионов с ограниченным доступом к официальной лицензии Minecraft.
 
 ## Особенности реализации

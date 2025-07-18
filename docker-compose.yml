@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  minecraft-server:
+    build: .
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./mods:/minecraft/mods
+      - ./config:/minecraft/config
+      - ./world:/minecraft/world
+      - ./server.properties:/minecraft/server.properties
+      - ./ops.json:/minecraft/ops.json
+      - ./whitelist.json:/minecraft/whitelist.json
+    environment:
+      JVM_OPTS: "-Xmx16G -Xms4G -XX:+UseG1GC -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+    restart: always
+    healthcheck:
+      test: "exit 0"
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
